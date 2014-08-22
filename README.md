@@ -1,7 +1,7 @@
 donut.js
 ========
 
-Simplest cross-browser (VML+SVG) donut chart generator
+Simplest cross-browser (VML+SVG) donut and pie chart generator
 
 [Live example](http://jsbin.com/fuxesa/3)
 
