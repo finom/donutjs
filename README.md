@@ -1,9 +1,11 @@
 donut.js
 ========
-[VOLODIA](http://i.imgur.com/SzBRLVS.png)
+
 Simplest cross-browser (VML+SVG) donut chart generator
 
 [Live example](http://jsbin.com/fuxesa/3)
+
+![Demo screenshot](http://i.imgur.com/aTPdXPh.png)
 
 ## Usage
 ```js
@@ -38,6 +40,20 @@ var myDonut = donut({
   colors: [ '#80a8cc', '#da3b3e', '#ffa921', 'red' ]
 });
 ```
+
+If weight === size/2 then you get pie chart:
+
+![Donut](http://i.imgur.com/SzBRLVS.png)
+
+```js
+var myDonut = donut({
+  el: document.getElementById( 'container' ),
+  size: 150,
+  weight: 75,
+  ...
+});
+```
+
 ### Methods
 - ``setColor(arc, color)`` -- sets arc color
 - ``data(arc[, data])`` -- gets or sets data depending on second parameter
