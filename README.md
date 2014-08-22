@@ -1,6 +1,6 @@
 donut.js
 ========
-
+[VOLODIA](http://i.imgur.com/SzBRLVS.png)
 Simplest cross-browser (VML+SVG) donut chart generator
 
 [Live example](http://jsbin.com/fuxesa/3)
@@ -48,7 +48,7 @@ alert(donut.data(B_Arc).customData);
 
 donut.setColor(arc, '#8dc700');
 ```
-[](http://i.imgur.com/SzBRLVS.png)
+
 ### 
 
 **Lisensed under WTFPL**
