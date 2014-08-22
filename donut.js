@@ -13,7 +13,7 @@
 		donut = function( options ) {
 			var div = doc.createElement( 'div' ),
 				size = options.size || 100,
-				data = options.data || [],
+				data = options.data || [{value: 1}],
 				weight = options.weight || 20,
 				colors = options.colors || ['#555'],
 				el = options.el,
