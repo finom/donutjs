@@ -13,7 +13,7 @@ var myDonutDiv = donut(options); // returns div with donut
 ```
 ### Options
 - ``el`` (Node) -- DOM node where donut should be placed (optional)
-- ``data`` (Array) -- array of objects (eg ``{value: 42}``)
+- ``data`` (Array) -- array of objects (eg ``{value: 42, name: 'A'}``)
 - ``size`` (Number) -- diameter of donut (100 by default)
 - ``weight`` (Number) -- weight of arcs (size minus donut hole diameter) (20 by default)
 - ``colors`` (Array) -- list of colors (``['#555']`` by default)
