@@ -41,7 +41,7 @@ var myDonut = donut({
 });
 ```
 
-If weight === size/2 then you get pie chart:
+If ``options.weight === options.size/2`` then you get pie chart:
 
 ![Donut](http://i.imgur.com/SzBRLVS.png)
 
