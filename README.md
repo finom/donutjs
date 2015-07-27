@@ -67,4 +67,4 @@ donut.setColor(arc, '#8dc700');
 
 ### 
 
-**Lisensed under WTFPL**
+**Licensed under WTFPL**
