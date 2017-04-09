@@ -1,4 +1,4 @@
-donut.js
+donutjs [![npm version](https://badge.fury.io/js/donutjs.svg)](https://badge.fury.io/js/donutjs)
 ========
 
 Simple, cross-browser (VML+SVG) donut and pie charts generator
