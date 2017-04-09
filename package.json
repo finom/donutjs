@@ -1,0 +1,24 @@
+{
+  "name": "donutjs",
+  "version": "0.0.1",
+  "description": "Simple donut and pie charts generator",
+  "main": "donut.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finom/donut.js.git"
+  },
+  "keywords": [
+    "donut",
+    "pie",
+    "chart"
+  ],
+  "author": "Andrey Gubanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/finom/donut.js/issues"
+  },
+  "homepage": "https://github.com/finom/donut.js#readme"
+}

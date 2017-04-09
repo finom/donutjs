@@ -1,7 +1,9 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
-        define( factory );
-    } else {
+        define(factory);
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory();
+    } else  {
         root.donut = factory();
     }
 })(this, function () {
@@ -30,14 +32,14 @@
 						el.setAttribute( j, o[ j ] );
 					}
 				};
-			
+
 			for( i = 0; i < data.length; i++ ) {
 				sum += data[ i ].value;
 			}
-			
+
 			div.className = 'donut';
 			div.style.width = div.style.height = size + 'px';
-			
+
 			if( IE ) {
 				size -= weight;
 
@@ -45,16 +47,16 @@
 					startAngle = -fault,
 					arcStyle,
 					fill;
-				
+
 				for( i = 0; i < data.length; i++ ) {
 					value = data[ i ].value/sum;
 					arc = doc.createElement( '<v:arc>' );
-					
+
 					fill = doc.createElement( '<v:fill>' );
 					fill.opacity = 0;
-					
+
 					arc.appendChild( fill );
-					
+
 					arcStyle = arc.style;
 					arcStyle.top = arcStyle.left = weight/2 + 'px';
 					arcStyle.width = arcStyle.height = size + 'px';
@@ -67,7 +69,7 @@
 						'data-name': data[ i ].name,
 						'class': 'donut-arc'
 					});
-					
+
 					donut.data( arc, data[ i ] );
 					div.appendChild( arc );
 				}
@@ -76,17 +78,17 @@
 					svg = doc.createElementNS( NS, 'svg' ),
 					startAngle = -PI/2,
 					arcRadius = r - weight/2;
-				
+
 				svg.setAttribute( 'height', size + 'px' );
 				svg.setAttribute( 'width', size + 'px' );
 
 				div.appendChild( svg );
-				
+
 				for( i = 0; i < data.length; i++ ) {
 					value = data[ i ].value/sum;
 					value = value === 1 ? .9999 : value;
 					arc = doc.createElementNS( NS, 'path' );
-					
+
 					var segmentAngle = value * PI * 2,
 						endAngle = segmentAngle + startAngle,
 						largeArc = ((endAngle - startAngle) % (PI * 2)) > PI ? 1 : 0,
@@ -94,9 +96,9 @@
 						startY = r + sin(startAngle) * arcRadius,
 						endX = r + cos(endAngle) * arcRadius,
 						endY = r + sin(endAngle) * arcRadius;
-						
+
 					startAngle = endAngle;
-					
+
 					setAttribute( arc, {
 						d: [
 							'M', startX, startY,
@@ -112,19 +114,19 @@
 					svg.appendChild( arc );
 				}
 			}
-			
+
 			if( el ) {
 				el.appendChild( div )
 			}
-			
+
 			return div;
 		};
-	
+
 	if( IE ) {
 		doc.namespaces.add('v', 'urn:schemas-microsoft-com:vml');
 		doc.createStyleSheet().cssText = 'v\\:arc,v\\:fill{behavior:url(#default#VML);display:inline-block;position:absolute;}';
 	}
-		
+
 	donut.data = function( arc, data ) {
 		if( typeof data === 'undefined' ) {
 			return donutData[ arc._DONUT ];
@@ -133,16 +135,16 @@
 			return arc;
 		}
 	};
-	
+
 	donut.setColor = function( arc, color ) {
 		if( IE ) {
 			arc.strokecolor = color; // setAttribute doesn't work second time
 		} else {
 			arc.setAttribute( 'stroke', color );
 		}
-		
+
 		return arc;
 	};
-	
+
 	return donut;
 });
